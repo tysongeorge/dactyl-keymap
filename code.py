@@ -20,6 +20,7 @@ keyboard.modules.append(MediaKeys())
 
 # settings up layers
 MOMENTARY = KC.MO(1)
+MOMENTARY_2 = KC.MO(2)
 MOD_LAYER = KC.LM(1, KC.LSFT)
 RCS = KC.HT(KC.RCTRL, KC.RSFT(KC.RCTRL), tap_time=250, prefer_hold=False)
 LCG = KC.HT(KC.LALT, KC.LGUI(KC.LCTRL), tap_time=250, prefer_hold=False)
@@ -31,7 +32,7 @@ LCG = KC.HT(KC.LALT, KC.LGUI(KC.LCTRL), tap_time=250, prefer_hold=False)
 # Modified Workman Layout (US) 
 keyboard.keymap = [
     [   # main layer
-        KC.GRAVE,  KC.N1,   KC.N2,   KC.N3, KC.TRNS, KC.TRNS,                           KC.N6, KC.N7,   KC.N8,   KC.N9,   KC.N0,     KC.EQL,
+        KC.GRAVE,  KC.N1,   KC.N2,   KC.N3, KC.TRNS, KC.TRNS,                           KC.N6, KC.N7,   KC.N8,   KC.N9,   KC.N0,     MOMENTARY_2,
         KC.TAB,    KC.Q,    KC.D,    KC.R,  KC.W,    KC.B,                              KC.J,  KC.F,    KC.U,    KC.P,    KC.SCLN,   KC.BSLS,
         KC.ESC,    KC.A,    KC.S,    KC.H,  KC.T,    KC.G,                              KC.Y,  KC.N,    KC.E,    KC.O,    KC.I,      KC.QUOT,
         KC.LSFT,   KC.Z,    KC.X,    KC.M,  KC.C,    KC.V,                              KC.K,  KC.L,    KC.COMM, KC.DOT,  KC.SLSH,   KC.MINUS,
@@ -42,9 +43,20 @@ keyboard.keymap = [
     ], 
 
     [   # num layer
+        KC.NO,    KC.NO,    KC.NO,    KC.NO,    KC.NO,    KC.NO,                              KC.NO,  KC.NO,    KC.NO,   KC.NO,    KC.NO,   KC.TRNS,
+        KC.TRNS,  KC.NO,    KC.VOLD,  KC.NO,    KC.VOLU,  KC.NO,                              KC.NO,  KC.NO,    KC.MPRV, KC.MPLY,  KC.MNXT, KC.BSLS,
+        KC.TRNS,  KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,  KC.N7,    KC.N8,   KC.N9,    KC.N0,   KC.PMNS,
+        KC.TRNS,  KC.NO,    KC.EQL,   KC.MUTE,  KC.NO,    KC.NO,                              KC.NO,  KC.NO,    KC.TRNS, KC.TRNS,  KC.TRNS, KC.TRNS,
+                        KC.UP, KC.DOWN,                                                           KC.LEFT, KC.RIGHT,
+                                              KC.TRNS,     KC.TRNS,         KC.TRNS,   KC.TRNS,
+                                              KC.TRNS,     KC.TRNS,         KC.TRNS,  KC.TRNS,
+                                              KC.TRNS,     KC.TRNS,         KC.TRNS,  KC.TRNS
+    ],
+
+    [   # func layer
         KC.NO,    KC.NO,    KC.NO,    KC.NO,     KC.NO,  KC.NO,                              KC.NO,  KC.NO,    KC.NO,   KC.NO,    KC.NO,   KC.TRNS,
         KC.TRNS,  KC.NO,    KC.NO,    KC.NO,     KC.NO,  KC.NO,                              KC.NO,  KC.NO,    KC.MPRV, KC.MPLY,  KC.MNXT, KC.BSLS,
-        KC.TRNS,  KC.N1,    KC.N2,    KC.N3,     KC.N4,  KC.N5,                              KC.N6,  KC.N7,    KC.N8,   KC.N9,    KC.N0,   KC.PMNS,
+        KC.TRNS,  KC.F1,    KC.F2,    KC.F3,     KC.F4,  KC.F5,                              KC.F6,  KC.F7,    KC.F8,   KC.F9,    KC.F10,   KC.PMNS,
         KC.TRNS,  KC.NO,    KC.EQL,   KC.MINUS,  KC.NO,  KC.NO,                              KC.NO,  KC.NO,    KC.TRNS, KC.TRNS,  KC.TRNS, KC.NO,
                         KC.UP, KC.DOWN,                                                           KC.LEFT, KC.RIGHT,
                                               KC.TRNS,     KC.TRNS,         KC.TRNS,   KC.TRNS,
